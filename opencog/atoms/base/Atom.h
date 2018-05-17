@@ -35,9 +35,9 @@
 
 #include <opencog/util/sigslot.h>
 #include <opencog/atoms/base/Handle.h>
-#include <opencog/atoms/base/ProtoAtom.h>
+#include <opencog/atoms/proto/ProtoAtom.h>
 #include <opencog/truthvalue/TruthValue.h>
-#include <opencog/atoms/base/ClassServer.h>
+#include <opencog/atoms/proto/NameServer.h>
 
 class AtomUTest;
 
@@ -230,7 +230,7 @@ public:
     {
         Type at(get_type());
         if (not subclass) return t == at;
-        return classserver().isA(at, t);
+        return nameserver().isA(at, t);
     }
 
     //! Returns the AtomSpace in which this Atom is inserted.
