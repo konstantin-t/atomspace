@@ -15,7 +15,6 @@ ADD_LIBRARY (atomproto
 	FloatValue.cc
 	LinkValue.cc
 	StringValue.cc
-	Valuation.cc
 )
 
 # Without this, parallel make will race and crap up the generated files.
@@ -37,7 +36,6 @@ INSTALL (FILES
 	ProtoAtom.h
 	StringValue.h
 	types.h
-	Valuation.h
 	DESTINATION "include/opencog/atoms/proto"
 )
 
