@@ -12,7 +12,7 @@
 #include <libguile.h>
 
 #include <opencog/atoms/base/ClassServer.h>
-#include <opencog/atoms/base/ProtoAtom.h>
+#include <opencog/atoms/proto/ProtoAtom.h>
 #include <opencog/truthvalue/AttentionValue.h>
 #include <opencog/truthvalue/CountTruthValue.h>
 #include <opencog/truthvalue/TruthValue.h>

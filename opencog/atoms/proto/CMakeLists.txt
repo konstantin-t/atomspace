@@ -38,7 +38,7 @@ INSTALL (FILES
 	StringValue.h
 	types.h
 	Valuation.h
-	DESTINATION "include/opencog/atoms/base"  # TODO: change to proto
+	DESTINATION "include/opencog/atoms/proto"
 )
 
 # Install the auto-generated atom types as well

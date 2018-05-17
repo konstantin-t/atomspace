@@ -45,10 +45,10 @@
 #include <opencog/atoms/base/ClassServer.h>
 #include <opencog/atoms/base/Link.h>
 #include <opencog/atoms/base/Node.h>
-#include <opencog/atoms/base/FloatValue.h>
-#include <opencog/atoms/base/LinkValue.h>
-#include <opencog/atoms/base/StringValue.h>
-#include <opencog/atoms/base/Valuation.h>
+#include <opencog/atoms/proto/FloatValue.h>
+#include <opencog/atoms/proto/LinkValue.h>
+#include <opencog/atoms/proto/StringValue.h>
+#include <opencog/atoms/proto/Valuation.h>
 #include <opencog/truthvalue/TruthValue.h>
 #include <opencog/atomspace/AtomSpace.h>
 #include <opencog/atomspaceutils/TLB.h>
