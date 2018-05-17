@@ -41,7 +41,7 @@
 #include <opencog/atoms/proto/FloatValue.h>
 #include <opencog/atoms/proto/LinkValue.h>
 #include <opencog/atoms/proto/StringValue.h>
-#include <opencog/atoms/proto/Valuation.h>
+#include <opencog/atoms/base/Valuation.h>
 
 #include <opencog/atomspace/AtomTable.h>
 #include <opencog/atomspaceutils/TLB.h>
