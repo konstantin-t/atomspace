@@ -37,6 +37,8 @@
 #include <opencog/atoms/base/Handle.h>
 #include <opencog/atoms/proto/ProtoAtom.h>
 #include <opencog/truthvalue/TruthValue.h>
+#include <opencog/atoms/base/ClassServer.h>
+
 
 class AtomUTest;
 
@@ -223,6 +225,14 @@ public:
 
     virtual ~Atom();
     virtual bool is_atom() const { return true; }
+
+    /** Basic predicate */
+    bool is_type(Type t, bool subclass = true) const
+    {
+        Type at(get_type());
+        if (not subclass) return t == at;
+        return classserver().isA(at, t);
+    }
 
     //! Returns the AtomSpace in which this Atom is inserted.
     AtomSpace* getAtomSpace() const { return _atom_space; }
