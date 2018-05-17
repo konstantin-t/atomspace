@@ -21,7 +21,7 @@
  */
 
 #include <opencog/atoms/base/Atom.h>
-#include <opencog/atoms/base/Valuation.h>
+#include <opencog/atoms/proto/Valuation.h>
 
 using namespace opencog;
 

@@ -28,7 +28,7 @@
 #include <set>
 
 #include <opencog/atoms/base/Handle.h>
-#include <opencog/atoms/base/Valuation.h>
+#include <opencog/atoms/proto/Valuation.h>
 
 namespace opencog
 {

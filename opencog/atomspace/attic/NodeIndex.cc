@@ -22,7 +22,7 @@
 #include <opencog/atomspace/NodeIndex.h>
 #include <opencog/atoms/base/Atom.h>
 #include <opencog/atoms/base/ClassServer.h>
-#include <opencog/atoms/base/atom_types.h>
+#include <opencog/atoms/proto/atom_types.h>
 
 using namespace opencog;
 
