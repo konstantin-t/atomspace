@@ -1,5 +1,5 @@
 /*
- * opencog/atoms/base/LinkValue.h
+ * opencog/atoms/proto/LinkValue.h
  *
  * Copyright (C) 2015 Linas Vepstas
  * All Rights Reserved

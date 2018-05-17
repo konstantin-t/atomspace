@@ -1,5 +1,5 @@
 /*
- * opencog/atoms/base/LinkValue.cc
+ * opencog/atoms/proto/LinkValue.cc
  *
  * Copyright (C) 2015 Linas Vepstas
  * All Rights Reserved

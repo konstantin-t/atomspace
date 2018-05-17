@@ -1,5 +1,5 @@
 /*
- * opencog/atoms/base/FloatValue.h
+ * opencog/atoms/proto/FloatValue.h
  *
  * Copyright (C) 2015 Linas Vepstas
  * All Rights Reserved

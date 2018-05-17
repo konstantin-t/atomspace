@@ -1,5 +1,5 @@
 /*
- * opencog/atoms/base/Valuation.cc
+ * opencog/atoms/proto/Valuation.cc
  *
  * Copyright (C) 2015,2017 Linas Vepstas
  * All Rights Reserved

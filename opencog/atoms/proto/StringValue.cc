@@ -1,5 +1,5 @@
 /*
- * opencog/atoms/base/StringValue.cc
+ * opencog/atoms/proto/StringValue.cc
  *
  * Copyright (C) 2015, 2016 Linas Vepstas
  * All Rights Reserved
