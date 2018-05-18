@@ -38,7 +38,7 @@
 #include <opencog/util/oc_assert.h>
 #include <opencog/atoms/base/Atom.h>
 #include <opencog/atoms/base/Handle.h>
-#include <opencog/atoms/base/ClassServer.h>
+#include <opencog/atoms/proto/NameServer.h>
 #include <opencog/atoms/base/Link.h>
 #include <opencog/atoms/base/Node.h>
 #include <opencog/truthvalue/CountTruthValue.h>

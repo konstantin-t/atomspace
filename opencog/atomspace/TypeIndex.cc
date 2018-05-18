@@ -21,7 +21,7 @@
 
 #include "TypeIndex.h"
 #include <opencog/atoms/base/Atom.h>
-#include <opencog/atoms/base/ClassServer.h>
+#include <opencog/atoms/proto/NameServer.h>
 
 using namespace opencog;
 

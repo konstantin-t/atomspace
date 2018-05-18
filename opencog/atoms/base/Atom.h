@@ -37,7 +37,7 @@
 #include <opencog/atoms/base/Handle.h>
 #include <opencog/atoms/proto/ProtoAtom.h>
 #include <opencog/truthvalue/TruthValue.h>
-#include <opencog/atoms/base/ClassServer.h>
+#include <opencog/atoms/proto/NameServer.h>
 
 class AtomUTest;
 

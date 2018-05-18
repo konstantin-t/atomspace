@@ -33,7 +33,6 @@
 #include <opencog/util/functional.h>
 #include <opencog/util/Logger.h>
 #include <opencog/atoms/base/Atom.h>
-#include <opencog/atoms/base/ClassServer.h>
 #include <opencog/atoms/base/Handle.h>
 #include <opencog/atoms/base/Link.h>
 #include <opencog/atoms/proto/types.h>
