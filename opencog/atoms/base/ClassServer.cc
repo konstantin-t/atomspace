@@ -100,7 +100,7 @@ void ClassServer::addValidator(Type t, Validator* checker)
 
 	for (Type chi=t; chi < _nameServer.getNumberOfClasses(); chi++)
 	{
-		if (recursiveMap[t][chi])
+		if (_nameServer.isAncestor(t, chi))
 			_validator[chi] = checker;
 	}
 }
