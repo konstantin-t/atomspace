@@ -347,10 +347,10 @@ bool is_well_typed(const TypeSet& ts)
 
 Type type_intersection(Type lhs, Type rhs)
 {
-	ClassServer& cs = classserver();
-	if (cs.isA(lhs, rhs))
+	NameServer& ns = nameserver();
+	if (ns.isA(lhs, rhs))
 		return lhs;
-	if (cs.isA(rhs, lhs))
+	if (ns.isA(rhs, lhs))
 		return rhs;
 	return NOTYPE;              // represent the bottom type
 }

@@ -285,7 +285,7 @@ Type SchemeSmob::verify_atom_type (SCM stype, const char *subrname, int pos)
 		scm_wrong_type_arg_msg(subrname, pos, stype, "name of opencog atom type");
 
 	const char * ct = scm_i_string_chars(stype);
-	Type t = classserver().getType(ct);
+	Type t = nameserver().getType(ct);
 
 	// Make sure that the type is good
 	if (NOTYPE == t)

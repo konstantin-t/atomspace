@@ -36,7 +36,7 @@ FindAtoms::FindAtoms(Type t, bool subclass)
 {
 	if (subclass)
 	{
-		classserver().getChildrenRecursive(t, inserter(_target_types));
+		nameserver().getChildrenRecursive(t, inserter(_target_types));
 	}
 }
 
@@ -45,7 +45,7 @@ FindAtoms::FindAtoms(Type ta, Type tb, bool subclass)
 {
 	if (subclass)
 	{
-		classserver().getChildrenRecursive(tb, inserter(_target_types));
+		nameserver().getChildrenRecursive(tb, inserter(_target_types));
 	}
 }
 

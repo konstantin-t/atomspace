@@ -33,7 +33,7 @@ NodeIndex::NodeIndex()
 
 void NodeIndex::resize()
 {
-	idx.resize(classserver().getNumberOfClasses());
+	idx.resize(nameserver().getNumberOfClasses());
 }
 
 size_t NodeIndex::size() const

@@ -32,7 +32,7 @@ TypeIndex::TypeIndex(void)
 
 void TypeIndex::resize(void)
 {
-	num_types = classserver().getNumberOfClasses();
+	num_types = nameserver().getNumberOfClasses();
 	FixedIntegerIndex::resize(num_types + 1);
 }
 

@@ -28,7 +28,7 @@ RandomAtomGenerator::RandomAtomGenerator(AtomSpace* atomspace,
     _chance_of_non_default_link = chance_of_non_default_link;
     _link_size_mean = link_size_mean;
 
-    _total_types = classserver().getNumberOfClasses();
+    _total_types = nameserver().getNumberOfClasses();
 
     _counter = 0;
     _chance_of_default_tv = chance_of_default_tv;

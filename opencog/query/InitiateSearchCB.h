@@ -57,7 +57,7 @@ public:
 
 protected:
 
-	ClassServer& _classserver;
+	NameServer& _nameserver;
 
 	const Variables* _variables;
 	const Pattern* _pattern;

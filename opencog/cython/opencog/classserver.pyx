@@ -1,5 +1,5 @@
-from atomspace cimport cClassServer, classserver, NOTYPE, string, Type
-from classserver cimport strcmp
+from atomspace cimport cClassServer, nameserver, NOTYPE, string, Type
+from nameserver cimport strcmp
 
 
 # Dynamically construct a "types" module.
@@ -10,7 +10,7 @@ from classserver cimport strcmp
 # Given a numeric type, look up the string name.
 cdef c_get_type_name(Type t):
     # cdef cClassServer cs
-    # cs = classserver()
+    # cs = nameserver()
     cdef string s
     s = nameserver().getTypeName(t)
 
@@ -20,7 +20,7 @@ cdef c_get_type_name(Type t):
 
 # Given the string name, look up the numeric type.
 cdef c_get_named_type(str type_name):
-    return classserver().getType(type_name.encode('UTF-8'))
+    return nameserver().getType(type_name.encode('UTF-8'))
 
 # Atom type methods.
 def get_type_name(t):
@@ -45,8 +45,8 @@ cdef generate_type_module():
     global types
     types = {}
     cdef string s
-    # print "Class server has num types=", classserver().getNumberOfClasses()
-    for i in range(0, classserver().getNumberOfClasses()):
+    # print "Class server has num types=", nameserver().getNumberOfClasses()
+    for i in range(0, nameserver().getNumberOfClasses()):
         s = nameserver().getTypeName(i)
         assert s.size() > 0, "Got blank type name while generating types module"
         types[string(s.c_str()).decode('UTF-8')] = i

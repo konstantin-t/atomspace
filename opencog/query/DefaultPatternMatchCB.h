@@ -93,7 +93,7 @@ class DefaultPatternMatchCB : public virtual PatternMatchCallback
 		bool optionals_present(void) { return _optionals_present; }
 	protected:
 
-		ClassServer& _classserver;
+		NameServer& _nameserver;
 
 		const Variables* _vars = NULL;
 		const HandleSet* _dynamic = NULL;

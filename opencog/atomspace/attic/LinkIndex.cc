@@ -36,7 +36,7 @@ LinkIndex::LinkIndex(void)
 
 void LinkIndex::resize()
 {
-	idx.resize(classserver().getNumberOfClasses());
+	idx.resize(nameserver().getNumberOfClasses());
 }
 
 size_t LinkIndex::size() const
@@ -88,7 +88,7 @@ UnorderedHandleSet LinkIndex::getHandleSet(Type type,
 	UnorderedHandleSet hs;
 	if (subclass)
 	{
-		Type max = classserver().getNumberOfClasses();
+		Type max = nameserver().getNumberOfClasses();
 		for (Type s = 0; s < max; s++)
 		{
 			// The 'AssignableFrom' direction is unit-tested in AtomSpaceUTest.cxxtest

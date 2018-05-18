@@ -1273,9 +1273,9 @@ void PGAtomStorage::setup_type_map(void)
     database.execute("SELECT * FROM TypeCodes;");
     database.for_each_row(&Database::type_cb);
 
-    // Now loop over each type that the classserver knows about and
+    // Now loop over each type that the nameserver knows about and
     // map it to the database types.
-    unsigned int numberOfTypes = classserver().getNumberOfClasses();
+    unsigned int numberOfTypes = nameserver().getNumberOfClasses();
     for (Type t=0; t<numberOfTypes; t++)
     {
         int type_codes_type = _storing_type_map[t];
@@ -1323,7 +1323,7 @@ void PGAtomStorage::setup_type_map(void)
 
 void PGAtomStorage::map_database_type(int dbval, const char * type_name)
 {
-    Type realtype = classserver().getType(type_name);
+    Type realtype = nameserver().getType(type_name);
     _loading_type_map[dbval] = realtype;
     _storing_type_map[realtype] = dbval;
     if (_database_type_names[dbval] != NULL) free (_database_type_names[dbval]);
@@ -2023,7 +2023,7 @@ void PGAtomStorage::loadType(AtomTable &atom_table, Type atom_type)
 
     // For links, assume a worst-case height.
     // For nodes, its easy ... max_height is zero.
-    if (classserver().isNode(atom_type))
+    if (nameserver().isNode(atom_type))
         max_height = 0;
     else
         max_height = load_max_atoms_height();

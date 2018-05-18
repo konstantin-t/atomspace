@@ -237,7 +237,7 @@ void VariableList::get_vartype(const Handle& htypelink)
 		Type vt = TypeNodeCast(vartype)->get_value();
 		TypeSet ts;
 		TypeSet::iterator it = ts.begin();
-		classserver().getChildren(vt, std::inserter(ts, it));
+		nameserver().getChildren(vt, std::inserter(ts, it));
 		_varlist._simple_typemap.insert({varname, ts});
 	}
 	else if (TYPE_CO_INH_NODE == t)
@@ -245,7 +245,7 @@ void VariableList::get_vartype(const Handle& htypelink)
 		Type vt = TypeNodeCast(vartype)->get_value();
 		TypeSet ts;
 		TypeSet::iterator it = ts.begin();
-		classserver().getChildren(vt, std::inserter(ts, it));
+		nameserver().getChildren(vt, std::inserter(ts, it));
 		_varlist._simple_typemap.insert({varname, ts});
 	}
 	else if (TYPE_CHOICE == t)

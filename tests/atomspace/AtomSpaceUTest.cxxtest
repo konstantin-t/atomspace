@@ -288,7 +288,7 @@ get_handles_by_name(AtomSpace* as,
         if (h) *(result++) = h;
         return result;
     }
-    classserver().foreachRecursive(
+    nameserver().foreachRecursive(
         [&](Type t)->void {
             // Avoid illegal gets.
             if (nameserver().isA(t, NUMBER_NODE)) return;

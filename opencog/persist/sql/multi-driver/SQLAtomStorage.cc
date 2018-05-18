@@ -1524,7 +1524,7 @@ void SQLAtomStorage::setup_typemap(void)
 		rp.rs->foreach_row(&Response::type_cb, &rp);
 	}
 
-	unsigned int numberOfTypes = classserver().getNumberOfClasses();
+	unsigned int numberOfTypes = nameserver().getNumberOfClasses();
 	for (Type t=0; t<numberOfTypes; t++)
 	{
 		int sqid = storing_typemap[t];
@@ -1573,7 +1573,7 @@ void SQLAtomStorage::setup_typemap(void)
 
 void SQLAtomStorage::set_typemap(int dbval, const char * tname)
 {
-	Type realtype = classserver().getType(tname);
+	Type realtype = nameserver().getType(tname);
 	loading_typemap[dbval] = realtype;
 	storing_typemap[realtype] = dbval;
 	if (db_typename[dbval] != NULL) free (db_typename[dbval]);
@@ -1994,7 +1994,7 @@ void SQLAtomStorage::loadType(AtomTable &table, Type atom_type)
 
 	// For links, assume a worst-case height.
 	// For nodes, its easy ... max_height is zero.
-	if (classserver().isNode(atom_type))
+	if (nameserver().isNode(atom_type))
 		max_height = 0;
 	else
 		max_height = getMaxObservedHeight();

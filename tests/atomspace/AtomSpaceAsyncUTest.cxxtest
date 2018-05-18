@@ -191,7 +191,7 @@ public:
 
     Type randomType(Type t)
     {
-        Type numberOfTypes = classserver().getNumberOfClasses();
+        Type numberOfTypes = nameserver().getNumberOfClasses();
         OC_ASSERT(t < numberOfTypes);
         Type randomType = NOTYPE;
         while (!nameserver().isA(randomType, t)
@@ -262,7 +262,7 @@ public:
     get_handles_by_name(AtomSpace* as, OutputIterator result,
                         const std::string& name)
     {
-        classserver().foreachRecursive(
+        nameserver().foreachRecursive(
             [&](Type t)->void {
                 if (nameserver().isA(t, NUMBER_NODE)) return;
                 if (nameserver().isA(t, TYPE_NODE)) return;
