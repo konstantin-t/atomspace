@@ -68,7 +68,7 @@ private:
      * to be a lose-lose proposition. See the Anthony Williams post here:
      * http://permalink.gmane.org/gmane.comp.lib.boost.devel/211180
      */
-    mutable std::mutex type_mutex;  // !!!
+    mutable std::mutex factory_mutex;
 
     mutable std::vector<AtomFactory*> _atomFactory;
     mutable std::vector<Validator*> _validator;
