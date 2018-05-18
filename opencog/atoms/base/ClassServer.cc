@@ -66,7 +66,7 @@ void ClassServer::spliceFactory(Type t, AtomFactory* fact)
 	ok_to_clobber.insert(validating_factory);
 	for (Type parent=0; parent < t; parent++)
 	{
-		if (nameServer.isAncestor(parent, t) and _atomFactory[parent])
+		if (_nameServer.isAncestor(parent, t) and _atomFactory[parent])
 			ok_to_clobber.insert(_atomFactory[parent]);
 	}
 
@@ -75,7 +75,7 @@ void ClassServer::spliceFactory(Type t, AtomFactory* fact)
 	// declared.
 	for (Type chi=t; chi < _nameServer.getNumberOfClasses(); chi++)
 	{
-		if (nameServer.isAncestor(t, chi) and
+		if (_nameServer.isAncestor(t, chi) and
 		    (nullptr == _atomFactory[chi] or
 		    ok_to_clobber.end() != ok_to_clobber.find(_atomFactory[chi])))
 		{
