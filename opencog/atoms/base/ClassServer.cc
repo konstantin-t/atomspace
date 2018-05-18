@@ -61,6 +61,11 @@ static Handle validating_factory(const Handle& atom_to_check)
 
 void ClassServer::spliceFactory(Type t, AtomFactory* fact)
 {
+	// N.B. it is too late to synchronize calls with NameServer using a shared mutex.
+	// If registrations of class names interleave with registration of factories,
+	// then the code will not work properly anyway. Before a factory is registered,
+	// the complete class hierarchy must be known.
+	
 	// Find all the factories that belong to parents of this type.
 	std::set<AtomFactory*> ok_to_clobber;
 	ok_to_clobber.insert(validating_factory);
@@ -86,14 +91,14 @@ void ClassServer::spliceFactory(Type t, AtomFactory* fact)
 
 void ClassServer::addFactory(Type t, AtomFactory* fact)
 {
-	std::unique_lock<std::mutex> l(type_mutex);
+	std::unique_lock<std::mutex> l(factory_mutex);
 	_atomFactory.resize(_nameServer.getNumberOfClasses());
 	spliceFactory(t, fact);
 }
 
 void ClassServer::addValidator(Type t, Validator* checker)
 {
-	std::unique_lock<std::mutex> l(type_mutex);
+	std::unique_lock<std::mutex> l(factory_mutex);
 	_validator.resize(_nameServer.getNumberOfClasses());
 	_validator[t] = checker;
 	spliceFactory(t, validating_factory);
