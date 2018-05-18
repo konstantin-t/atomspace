@@ -9,8 +9,8 @@ from nameserver cimport strcmp
 
 # Given a numeric type, look up the string name.
 cdef c_get_type_name(Type t):
-    # cdef cClassServer cs
-    # cs = nameserver()
+    # cdef cNameServer ns
+    # ns = nameserver()
     cdef string s
     s = nameserver().getTypeName(t)
 
