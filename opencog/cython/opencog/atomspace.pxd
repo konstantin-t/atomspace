@@ -87,7 +87,7 @@ cdef extern from "opencog/atoms/base/ClassServer.h" namespace "opencog":
         Type getNumberOfClasses()
     cdef cClassServer classserver()
 
-cdef extern from "opencog/atoms/base/atom_types.h" namespace "opencog":
+cdef extern from "opencog/atoms/proto/atom_types.h" namespace "opencog":
     cdef Type NOTYPE
 
 
