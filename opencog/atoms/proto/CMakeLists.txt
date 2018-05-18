@@ -36,11 +36,11 @@ INSTALL (FILES
 	ProtoAtom.h
 	StringValue.h
 	types.h
-	DESTINATION "include/opencog/atoms/base"  # TODO: change to proto
+	DESTINATION "include/opencog/atoms/proto"
 )
 
 # Install the auto-generated atom types as well
 INSTALL (FILES
 	${CMAKE_CURRENT_BINARY_DIR}/core_types.scm
-	DESTINATION "${DATADIR}/scm/opencog/base"
+	DESTINATION "${DATADIR}/scm/opencog/proto"
 )
