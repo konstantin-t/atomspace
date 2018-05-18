@@ -175,7 +175,7 @@ Type ClassServer::getNumberOfClasses() const
     return nTypes;
 }
 
-bool ClassServer::isAncestor(Type sub, Type super) const
+bool ClassServer::isAncestor(Type super, Type sub) const
 {
 	std::lock_guard<std::mutex> l(type_mutex);
 	return recursiveMap[super][sub];
