@@ -34,7 +34,7 @@
 #include <opencog/atoms/proto/types.h>
 #include <opencog/atoms/proto/atom_types.h>
 #include <opencog/atoms/proto/ProtoAtom.h>
-#include <opencog/util/exception.h>
+#include <opencog/util/exceptions.h>
 
 //#define DPRINTF printf
 #define DPRINTF(...)
