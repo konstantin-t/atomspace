@@ -71,7 +71,7 @@ class AtomTable
     friend class ::AtomSpaceUTest;
 
 private:
-    ClassServer& _classserver;
+    NameServer& _nameserver;
 
     // Single, global mutex for locking the indexes.
     // Its recursive because we need to lock twice during atom insertion
