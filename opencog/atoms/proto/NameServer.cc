@@ -82,13 +82,13 @@ bool NameServer::beginTypeDecls(const char * mod_name)
 	return false;
 }
 
-void ClassServer::endTypeDecls(void)
+void NameServer::endTypeDecls(void)
 {
 	// Valid types are odd-numbered.
 	tmod++;
 }
 
-Type ClassServer::declType(const Type parent, const std::string& name)
+Type NameServer::declType(const Type parent, const std::string& name)
 {
     if (1 != tmod%2)
         throw InvalidParamException(TRACE_INFO,
@@ -150,7 +150,7 @@ Type ClassServer::declType(const Type parent, const std::string& name)
     return type;
 }
 
-void ClassServer::setParentRecursively(Type parent, Type type, Type& maxd)
+void NameServer::setParentRecursively(Type parent, Type type, Type& maxd)
 {
     if (recursiveMap[parent][type]) return;
 
@@ -165,29 +165,29 @@ void ClassServer::setParentRecursively(Type parent, Type type, Type& maxd)
     if (incr) maxd++;
 }
 
-TypeSignal& ClassServer::typeAddedSignal()
+TypeSignal& NameServer::typeAddedSignal()
 {
     return _addTypeSignal;
 }
 
-Type ClassServer::getNumberOfClasses() const
+Type NameServer::getNumberOfClasses() const
 {
     return nTypes;
 }
 
-bool ClassServer::isAncestor(Type super, Type sub) const
+bool NameServer::isAncestor(Type super, Type sub) const
 {
 	std::lock_guard<std::mutex> l(type_mutex);
 	return recursiveMap[super][sub];
 }
 
-bool ClassServer::isDefined(const std::string& typeName) const
+bool NameServer::isDefined(const std::string& typeName) const
 {
     std::lock_guard<std::mutex> l(type_mutex);
     return name2CodeMap.find(typeName) != name2CodeMap.end();
 }
 
-Type ClassServer::getType(const std::string& typeName) const
+Type NameServer::getType(const std::string& typeName) const
 {
     std::lock_guard<std::mutex> l(type_mutex);
     std::unordered_map<std::string, Type>::const_iterator it = name2CodeMap.find(typeName);
@@ -197,7 +197,7 @@ Type ClassServer::getType(const std::string& typeName) const
     return it->second;
 }
 
-const std::string& ClassServer::getTypeName(Type type) const
+const std::string& NameServer::getTypeName(Type type) const
 {
     static std::string nullString = "*** Unknown Type! ***";
 
