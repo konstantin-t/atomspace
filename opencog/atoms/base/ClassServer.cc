@@ -107,12 +107,12 @@ void ClassServer::addValidator(Type t, Validator* checker)
 
 ClassServer::AtomFactory* ClassServer::getFactory(Type t) const
 {
-	return _atomFactory[t];
+	return t < _atomFactory.size() ? _atomFactory[t] : nullptr;
 }
 
 ClassServer::Validator* ClassServer::getValidator(Type t) const
 {
-	return _validator[t];
+	return t < _validator.size() ? _validator[t] : nullptr;
 }
 
 Handle ClassServer::factory(const Handle& h) const
