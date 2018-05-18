@@ -22,7 +22,7 @@
 #include <opencog/atoms/base/Link.h>
 #include <opencog/atomspace/LinkIndex.h>
 #include <opencog/atoms/base/ClassServer.h>
-#include <opencog/atoms/base/atom_types.h>
+#include <opencog/atoms/proto/atom_types.h>
 
 //#define DPRINTF printf
 #define DPRINTF(...)

@@ -26,7 +26,7 @@
 #include <memory>
 #include <string>
 
-#include <opencog/atoms/base/types.h>
+#include <opencog/atoms/proto/types.h>
 
 namespace opencog
 {
