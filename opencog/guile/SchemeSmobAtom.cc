@@ -79,7 +79,7 @@ SCM SchemeSmob::ss_type (SCM satom)
 {
 	Handle h = verify_handle(satom, "cog-type");
 	Type t = h->get_type();
-	const std::string &tname = classserver().getTypeName(t);
+	const std::string &tname = nameserver().getTypeName(t);
 	SCM str = scm_from_utf8_string(tname.c_str());
 	SCM sym = scm_string_to_symbol(str);
 
@@ -289,7 +289,7 @@ SCM SchemeSmob::ss_get_types (void)
 	Type t = classserver().getNumberOfClasses();
 	while (1) {
 		t--;
-		const std::string &tname = classserver().getTypeName(t);
+		const std::string &tname = nameserver().getTypeName(t);
 		SCM str = scm_from_utf8_string(tname.c_str());
 		SCM sym = scm_string_to_symbol(str);
 		list = scm_cons(sym, list);
@@ -312,7 +312,7 @@ SCM SchemeSmob::ss_get_subtypes (SCM stype)
 
 	for (unsigned int i=0; i<ns; i++) {
 		t = subl[i];
-		const std::string &tname = classserver().getTypeName(t);
+		const std::string &tname = nameserver().getTypeName(t);
 		SCM str = scm_from_utf8_string(tname.c_str());
 		SCM sym = scm_string_to_symbol(str);
 		list = scm_cons(sym, list);
@@ -376,7 +376,7 @@ SCM SchemeSmob::ss_value_type_p (SCM stype)
 {
 	if (scm_is_integer(stype)) {
 		Type t = scm_to_ushort(stype);
-		if (classserver().isValue(t) and not classserver().isAtom(t))
+		if (classserver().isValue(t) and not nameserver().isAtom(t))
 			return SCM_BOOL_T;
 		return SCM_BOOL_F;
 	}
@@ -391,7 +391,7 @@ SCM SchemeSmob::ss_value_type_p (SCM stype)
 	Type t = classserver().getType(ct);
 
 	if (NOTYPE == t) return SCM_BOOL_F;
-	if (classserver().isValue(t) and not classserver().isAtom(t))
+	if (classserver().isValue(t) and not nameserver().isAtom(t))
 		return SCM_BOOL_T;
 
 	return SCM_BOOL_F;
@@ -479,7 +479,7 @@ SCM SchemeSmob::ss_subtype_p (SCM stype, SCM schild)
 
 	if (NOTYPE == child) return SCM_BOOL_F;
 
-	if (classserver().isA(child, parent)) return SCM_BOOL_T;
+	if (nameserver().isA(child, parent)) return SCM_BOOL_T;
 
 	return SCM_BOOL_F;
 }

@@ -44,7 +44,7 @@ ArithmeticLink::ArithmeticLink(const Link& l)
 void ArithmeticLink::init(void)
 {
 	Type tscope = get_type();
-	if (not classserver().isA(tscope, ARITHMETIC_LINK))
+	if (not nameserver().isA(tscope, ARITHMETIC_LINK))
 		throw InvalidParamException(TRACE_INFO, "Expecting an ArithmeticLink");
 
 	_commutative = false;

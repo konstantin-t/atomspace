@@ -498,7 +498,7 @@ public:
     // that case, we have to load the outgoing set first.
     AtomPtr get_recursive_if_not_exists(PseudoPtr p)
     {
-        if (classserver().isA(p->type, NODE))
+        if (nameserver().isA(p->type, NODE))
         {
             NodePtr node(createNode(p->type, p->name, p->tv));
             TLB::addAtom(node, p->uuid);
@@ -1282,7 +1282,7 @@ void PGAtomStorage::setup_type_map(void)
         /* If this typename is not yet known, record it */
         if (-1 == type_codes_type)
         {
-            const char * type_name = classserver().getTypeName(t).c_str();
+            const char * type_name = nameserver().getTypeName(t).c_str();
 
             // Let the sql id be the same as the current type number,
             // unless this sql number is already in use, in which case
@@ -1764,7 +1764,7 @@ PGAtomStorage::PseudoPtr PGAtomStorage::make_pseudo_atom(Database &database,
     // All positive height atoms are links.
     // A negative height is "unknown" and must be checked.
     if ((0 == database.height) or
-        ((-1 == database.height) and classserver().isA(realtype, NODE)))
+        ((-1 == database.height) and nameserver().isA(realtype, NODE)))
     {
         // Handle the Node case
         pseudo_atom->name = database.name;
@@ -1772,7 +1772,7 @@ PGAtomStorage::PseudoPtr PGAtomStorage::make_pseudo_atom(Database &database,
         if (_verbose)
         {
             fprintf(stdout, "  %6lu %s, %s\n", uuid,
-                    classserver().getTypeName(realtype).c_str(), database.name);
+                    nameserver().getTypeName(realtype).c_str(), database.name);
         }
     }
     else
@@ -1804,7 +1804,7 @@ PGAtomStorage::PseudoPtr PGAtomStorage::make_pseudo_atom(Database &database,
         if (_verbose)
         {
             fprintf(stdout, "  %6lu %s, arity %lu, { ", uuid,
-                    classserver().getTypeName(realtype).c_str(),
+                    nameserver().getTypeName(realtype).c_str(),
                     pseudo_atom->oset.size());
             for (auto uuid : pseudo_atom->oset)
                 fprintf(stdout,"%lu ", uuid);

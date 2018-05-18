@@ -44,7 +44,7 @@ FoldLink::FoldLink(const Link& l)
 void FoldLink::init(void)
 {
 	Type tscope = get_type();
-	if (not classserver().isA(tscope, FOLD_LINK))
+	if (not nameserver().isA(tscope, FOLD_LINK))
 		throw InvalidParamException(TRACE_INFO, "Expecting a FoldLink");
 }
 
@@ -78,7 +78,7 @@ Handle FoldLink::delta_reduce(void) const
 			t = h->get_type();
 		}
 
-		if (classserver().isA(t, FOLD_LINK))
+		if (nameserver().isA(t, FOLD_LINK))
 		{
 			FoldLinkPtr fff(FoldLinkCast(classserver().factory(h)));
 			h = fff->delta_reduce();

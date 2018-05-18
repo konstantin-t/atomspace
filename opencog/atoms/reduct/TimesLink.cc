@@ -48,7 +48,7 @@ TimesLink::TimesLink(const Link& l)
 void TimesLink::init(void)
 {
 	Type tscope = get_type();
-	if (not classserver().isA(tscope, TIMES_LINK))
+	if (not nameserver().isA(tscope, TIMES_LINK))
 		throw InvalidParamException(TRACE_INFO, "Expecting a TimesLink");
 
 	knil = Handle(createNumberNode(1));

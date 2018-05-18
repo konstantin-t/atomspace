@@ -49,7 +49,7 @@ PlusLink::PlusLink(const Link& l)
 void PlusLink::init(void)
 {
 	Type tscope = get_type();
-	if (not classserver().isA(tscope, PLUS_LINK))
+	if (not nameserver().isA(tscope, PLUS_LINK))
 		throw InvalidParamException(TRACE_INFO, "Expecting a PlusLink");
 
 	knil = Handle(createNumberNode(0));

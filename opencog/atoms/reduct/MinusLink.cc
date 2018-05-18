@@ -48,7 +48,7 @@ MinusLink::MinusLink(const Link& l)
 void MinusLink::init(void)
 {
 	Type tscope = get_type();
-	if (not classserver().isA(tscope, MINUS_LINK))
+	if (not nameserver().isA(tscope, MINUS_LINK))
 		throw InvalidParamException(TRACE_INFO, "Expecting a MinusLink");
 
 	_commutative = false;

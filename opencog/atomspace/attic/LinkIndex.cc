@@ -92,7 +92,7 @@ UnorderedHandleSet LinkIndex::getHandleSet(Type type,
 		for (Type s = 0; s < max; s++)
 		{
 			// The 'AssignableFrom' direction is unit-tested in AtomSpaceUTest.cxxtest
-			if (classserver().isA(s, type))
+			if (nameserver().isA(s, type))
 			{
 				const HandleSeqIndex &hsi = idx.at(s);
 				Link* l = hsi.get(seq);

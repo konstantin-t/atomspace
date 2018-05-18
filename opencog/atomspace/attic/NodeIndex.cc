@@ -51,7 +51,7 @@ UnorderedHandleSet NodeIndex::getHandleSet(Type type, const std::string& name,
 
 		Type max = idx.size();
 		for (Type s = 0; s < max; s++) {
-			if (classserver().isA(s, type)) {
+			if (nameserver().isA(s, type)) {
 				Atom* atom = getAtom(s, name);
 				if (atom)
 					hs.insert(atom->get_handle());

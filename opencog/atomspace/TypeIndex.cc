@@ -65,7 +65,7 @@ TypeIndex::iterator TypeIndex::begin(Type t, bool sub) const
 	it.currtype++;
 	while (it.s != it.send)
 	{
-		if (classserver().isA(it.currtype, it.type))
+		if (nameserver().isA(it.currtype, it.type))
 		{
 			it.se = it.s->begin();
 			if (it.se != it.s->end()) return it;
@@ -150,7 +150,7 @@ TypeIndex::iterator& TypeIndex::iterator::operator++(int i)
 			currtype++;
 
 			// Find the first type which is a subtype, and start iteration there.
-			if (classserver().isA(currtype, type))
+			if (nameserver().isA(currtype, type))
 			{
 				se = s->begin();
 				if (se != s->end()) return *this;

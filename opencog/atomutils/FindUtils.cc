@@ -83,7 +83,7 @@ FindAtoms::Loco FindAtoms::find_rec(const Handle& h, Quotation quotation)
 
 	for (Type stopper : stopset)
 	{
-		if (classserver().isA(t, stopper)) return NOPE;
+		if (nameserver().isA(t, stopper)) return NOPE;
 	}
 
 	if (h->is_link())
@@ -271,7 +271,7 @@ bool is_unquoted_in_any_tree(const HandleSeq& trees,
 bool contains_atomtype(const Handle& clause, Type atom_type, Quotation quotation)
 {
 	Type clause_type = clause->get_type();
-	if (quotation.is_unquoted() and classserver().isA(clause_type, atom_type))
+	if (quotation.is_unquoted() and nameserver().isA(clause_type, atom_type))
 		return true;
 
 	quotation.update(clause_type);

@@ -62,7 +62,7 @@ std::string SchemeSmob::handle_to_string(const Handle& h, int indent)
 	if (h->is_node())
 	{
 		ret += "(";
-		ret += classserver().getTypeName(h->get_type());
+		ret += nameserver().getTypeName(h->get_type());
 		ret += " \"";
 		ret += h->get_name();
 		ret += "\"";
@@ -80,7 +80,7 @@ std::string SchemeSmob::handle_to_string(const Handle& h, int indent)
 	if (h->is_link())
 	{
 		ret += "(";
-		ret += classserver().getTypeName(h->get_type());
+		ret += nameserver().getTypeName(h->get_type());
 
 		// If there's a truth value, print it before the other atoms
 		TruthValuePtr tv(h->getTruthValue());
@@ -359,7 +359,7 @@ SCM SchemeSmob::ss_new_node (SCM stype, SCM sname, SCM kv_pairs)
 	Type t = verify_atom_type(stype, "cog-new-node", 1);
 
 	// Special case handling for NumberNode (and TimeNode, etc.)
-	if (classserver().isA(t, NUMBER_NODE) and scm_is_number(sname)) {
+	if (nameserver().isA(t, NUMBER_NODE) and scm_is_number(sname)) {
 		sname = scm_number_to_string(sname, _radix_ten);
 	}
 	std::string name(verify_string (sname, "cog-new-node", 2,

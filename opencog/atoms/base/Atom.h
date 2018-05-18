@@ -230,7 +230,7 @@ public:
     {
         Type at(get_type());
         if (not subclass) return t == at;
-        return classserver().isA(at, t);
+        return nameserver().isA(at, t);
     }
 
     //! Returns the AtomSpace in which this Atom is inserted.

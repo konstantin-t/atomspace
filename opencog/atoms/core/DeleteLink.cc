@@ -73,9 +73,9 @@ DeleteLink::DeleteLink(const Link &l)
 {
 	// Type must be as expected
 	Type tscope = l.get_type();
-	if (not classserver().isA(tscope, DELETE_LINK))
+	if (not nameserver().isA(tscope, DELETE_LINK))
 	{
-		const std::string& tname = classserver().getTypeName(tscope);
+		const std::string& tname = nameserver().getTypeName(tscope);
 		throw InvalidParamException(TRACE_INFO,
 			"Expecting a DeleteLink, got %s", tname.c_str());
 	}

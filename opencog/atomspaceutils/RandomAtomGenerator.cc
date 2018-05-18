@@ -62,13 +62,13 @@ Type RandomAtomGenerator::random_type(Type parent_type)
     // validated types since the validation will fail.
     do {
         candidate_type = ATOM + _random_generator->randint(_total_types - ATOM - 1);
-    } while (!classserver().isA(candidate_type, parent_type) or
-        classserver().isA(candidate_type, FREE_LINK) or
-        classserver().isA(candidate_type, SCOPE_LINK) or
+    } while (!nameserver().isA(candidate_type, parent_type) or
+        nameserver().isA(candidate_type, FREE_LINK) or
+        nameserver().isA(candidate_type, SCOPE_LINK) or
         candidate_type == VARIABLE_LIST or
         candidate_type == DEFINE_LINK or
         candidate_type == NUMBER_NODE or
-        classserver().isA(candidate_type,TYPE_NODE));
+        nameserver().isA(candidate_type,TYPE_NODE));
 
     return candidate_type;
 }

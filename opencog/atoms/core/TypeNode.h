@@ -69,7 +69,7 @@ public:
 	}
 
 	TypeNode(Type t)
-		: Node(TYPE_NODE, classserver().getTypeName(t)),
+		: Node(TYPE_NODE, nameserver().getTypeName(t)),
 		  value(t)
 	{}
 
@@ -77,7 +77,7 @@ public:
 		: Node(n),
 		  value(classserver().getType(n.get_name()))
 	{
-		OC_ASSERT(classserver().isA(n.get_type(), TYPE_NODE),
+		OC_ASSERT(nameserver().isA(n.get_type(), TYPE_NODE),
 			"Bad TypeNode constructor!");
 
 		if (DEFINED_TYPE_NODE != _type and NOTYPE == value)

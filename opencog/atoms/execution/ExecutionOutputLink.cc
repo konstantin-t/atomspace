@@ -45,7 +45,7 @@ public:
 
 void ExecutionOutputLink::check_schema(const Handle& schema) const
 {
-	if (not classserver().isA(schema->get_type(), SCHEMA_NODE) and
+	if (not nameserver().isA(schema->get_type(), SCHEMA_NODE) and
 	    LAMBDA_LINK != schema->get_type() and
 	    // In case it is a pattern matcher query
 	    UNQUOTE_LINK != schema->get_type())
