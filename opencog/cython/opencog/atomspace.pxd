@@ -72,7 +72,7 @@ cdef extern from "opencog/truthvalue/SimpleTruthValue.h" namespace "opencog":
 
 
 # Basic OpenCog types
-# ClassServer
+# NameServer
 ctypedef short Type
 
 cdef extern from "opencog/atoms/proto/NameServer.h" namespace "opencog":

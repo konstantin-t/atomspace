@@ -1,4 +1,4 @@
-from atomspace cimport cClassServer, nameserver, NOTYPE, string, Type
+from atomspace cimport cNameServer, nameserver, NOTYPE, string, Type
 from nameserver cimport strcmp
 
 
